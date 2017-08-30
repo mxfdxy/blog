@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	<title> NavigationBar与Navigation Item的区别 - Even' Den</title>
+  
+
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+</head>
+
+	<body>
+		<div id="nav">
+	<div class="wrapper">
+		<div id="logo"><a href="/"><img src="/image/logo.png" /></a></h1></div>
+		<ul>
+			<li id="category-tech"><a href="/tech.html">技术</a></li>
+			<li id="category-note"><a href="/note.html">笔记</a></li>
+			<li id="category-about"><a href="/about.html">关于</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+var category = location.pathname;
+if (category == '/tech.html') {
+	document.getElementById('category-tech').style.textDecoration = "underline";
+} else if (category == '/note.html') {
+	document.getElementById('category-note').style.textDecoration = "underline";
+} else if (category == '/about.html') {
+	document.getElementById('category-about').style.textDecoration = "underline";
+}
+
+</script>
+
+		<div class="wrapper main">
+			<div id="content">
+				<h2>NavigationBar与Navigation Item的区别</h2>
+				<div class="cnt">
+					<blockquote>
+  <p>刚接触 iOS 开发的同学估计不清楚 Navigation Bar 和 Navigation Item 区别，我在这里简单介绍一下两者的区别。</p>
+</blockquote>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-225bf2491e8f6578.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-6e688c6d08c06888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-d6992811be255d6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-645dcec0c866dfae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-2606a108e1406299.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png" /></p>
+
+<h3 id="总结">总结</h3>
+<ul>
+  <li>Navigation Bar 是 Navigation Controller（容器） 的属性，容器中的多个 View Controller 会共用这一属性；</li>
+  <li>Navigation Bar 的作用是放置 Navigation Item；</li>
+  <li>Navigation Item 是 View Controller 的独有属性，容器中多个 ViewController 之间不会共用这一属性；</li>
+  <li>Navigation Item 的作用是放置 leftBarButtonItem、rightBarButtonItem、title 和 prompt 等。</li>
+</ul>
+
+
+					<br />
+				</div>
+				<div id="disqus_thread"></div>
+			</div>
+			<div id="footer">
+	<p style="color:#ccc;font-size:12px;text-align: center">有梦想，有信仰</p>
+	<p style="clear:both"></p>
+</div>
+
+		</div>
+	</body>
+</html>

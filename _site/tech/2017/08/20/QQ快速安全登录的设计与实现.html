@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	<title> QQ快速安全登录的设计与实现 - Even' Den</title>
+  
+
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+</head>
+
+	<body>
+		<div id="nav">
+	<div class="wrapper">
+		<div id="logo"><a href="/"><img src="/image/logo.png" /></a></h1></div>
+		<ul>
+			<li id="category-tech"><a href="/tech.html">技术</a></li>
+			<li id="category-note"><a href="/note.html">笔记</a></li>
+			<li id="category-about"><a href="/about.html">关于</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+var category = location.pathname;
+if (category == '/tech.html') {
+	document.getElementById('category-tech').style.textDecoration = "underline";
+} else if (category == '/note.html') {
+	document.getElementById('category-note').style.textDecoration = "underline";
+} else if (category == '/about.html') {
+	document.getElementById('category-about').style.textDecoration = "underline";
+}
+
+</script>
+
+		<div class="wrapper main">
+			<div id="content">
+				<h2>QQ快速安全登录的设计与实现</h2>
+				<div class="cnt">
+					<blockquote>
+  <p>在使用QQ账号登录腾讯网站时，QQ推荐使用<strong>快速安全登录</strong>功能来方便快捷安全的登录腾讯网站。快速安全登录除了手机扫描二维码的方式还有另一种方式，即<strong>检测QQ客户端登录账户</strong>的方式进行登录。</p>
+</blockquote>
+
+<h3 id="问题">问题</h3>
+
+<p>Mac版QQ客户端5.1.0以后，加入了这项新功能（PC版QQ客户端同样加入了此项功能）。新版的QQ支持在浏览器快速安全登录，无需浏览器安装插件。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-0e0d3570c287bd75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.0.png" /></p>
+
+<p>具体的功能怎么样，在电脑上登录QQ客户端，当在浏览器登录腾讯的网站时，网页会提示当前电脑QQ客户端登录的账户，选择一个账户直接登录网页。相较于扫码登录，这种方式及省去了输入账户密码的麻烦同时也避免扫码时对手机的依赖，真正的方便快捷。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-0433297279ed8ca9.gif?imageMogr2/auto-orient/strip" alt="2.1.gif" /></p>
+
+<p>废话一堆堆，<strong>那么新版本的QQ客户端是怎样实现在浏览器快速登录的？网页如何检测到当前电脑客户端登录的QQ账号？</strong>第一想法是它可能使用了Cookie，用户在登录QQ客户端时会产生一个网页请求，打开浏览器将登录信息写入Cookie。这样做的代价会很大，因为用户电脑上会存在多个浏览器，而且Cookie信息的作用域跟域名有关，针对不同的域名需要多次写入Cookie。</p>
+<h3 id="探究">探究</h3>
+<p>打开浏览器（这里使用的是Chrome）控制台，审查网页元素，重点查看登录界面元素绑定的js事件和url请求。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-7560cc8ac3fa78da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.2.png" /></p>
+
+<p>审查元素的过程中，注意到登录子页面用到了<code class="highlighter-rouge">iframe</code>标签。在查看资源文件时找到<code class="highlighter-rouge">qc_ptlogin_iframe(xlogin)</code>文件夹，推测登录相关的资源都放在该目录下。仔细查看目录下每个资源请求的结果，找到一个跟包含账户信息的请求。</p>
+
+<p>可疑资源请求</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://localhost.ptlogin2.qq.com:4303/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+</code></pre>
+</div>
+
+<p>请求结果</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* QQ客户端已登录账号的基本信息 */
+var var_sso_uin_list=[{"account":"1139356156","face_index":-1,"gender":0,"nickname":"\" Forヾ","uin":"1139356156","client_type":66818,"uin_flag":8388608}];ptui_getuins_CB(var_sso_uin_list);
+</code></pre>
+</div>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-8685e4a9ef5f3ef0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.3.png" /></p>
+
+<p>为了得到更详细的请求信息，打开Network，发现网页在加载时请求该链接4次，其中3次请求失败。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* 请求成功 */
+https://localhost.ptlogin2.qq.com:4303/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+/* 请求失败 */
+https://localhost.ptlogin2.qq.com:4305/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+/* 请求失败 */
+https://localhost.ptlogin2.qq.com:4309/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+/* 请求失败 */
+https://localhost.ptlogin2.qq.com:4307/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+</code></pre>
+</div>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-51cc9e44bf390a58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.4.png" /></p>
+
+<p>这几次请求唯一不同的地方是请求端口号，分别请求了<code class="highlighter-rouge">4303</code>、<code class="highlighter-rouge">4305</code>、<code class="highlighter-rouge">4307</code>、<code class="highlighter-rouge">4309</code>这4个端口。继续查看求请求成功的详情，可以看到HTTP请求的Headers、Response信息。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* 常规信息 */
+Request URL:https://localhost.ptlogin2.qq.com:4303/pt_get_uins?callback=ptui_getuins_CB&amp;r=0.2243462042902722&amp;pt_local_tk=-1243521203
+Request Method:GET
+Status Code:200 OK
+Remote Address:127.0.0.1:4303
+Referrer Policy:no-referrer-when-downgrade
+
+/* 请求头 */
+Host:localhost.ptlogin2.qq.com:4303
+
+/* 请求参数 */
+callback:ptui_getuins_CB
+r:0.2243462042902722
+pt_local_tk:-1243521203
+
+/* 响应信息 */
+var var_sso_uin_list=[{"account":"1139356156","face_index":-1,"gender":0,"nickname":"\" Forヾ","uin":"1139356156","client_type":66818,"uin_flag":8388608}];ptui_getuins_CB(var_sso_uin_list);
+</code></pre>
+</div>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-240cb0b7411da751.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.5.png" /></p>
+
+<p>看到<code class="highlighter-rouge">Remote Address:127.0.0.1:4303</code>时，大家心里估计已经明白了。QQ客户端在登录成功后可能会开启一个HTTP服务，监听本机<code class="highlighter-rouge">127.0.0.1</code>的一个指定端口（如<code class="highlighter-rouge">4303</code>）。当登录多个账号时，会监听多个端口，不同的端口对应的QQ账户。网页端加载时会针对本机指定的几个端口（如<code class="highlighter-rouge">4303</code>、<code class="highlighter-rouge">4305</code>等）进行请求，获取已登录账号信息。</p>
+
+<h3 id="简单验证">简单验证</h3>
+<ul>
+  <li>通过ping命令，确定<code class="highlighter-rouge">localhost.ptlogin2.qq.com</code>域名对应的ip地址是<code class="highlighter-rouge">127.0.0.1</code>。</li>
+  <li>退出QQ客户端，刷新网页。对<code class="highlighter-rouge">localhost.ptlogin2.qq.com</code>的请求都失败了，QQ在退出时关闭了HTTP服务。</li>
+  <li>使用<code class="highlighter-rouge">lsof -i tcp:4303</code>命令查看<code class="highlighter-rouge">4303</code>端口信息，可以看到端口监听程序是确实是QQ客户端。</li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/439444-e39b1601d5800a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.6.png" /></p>
+
+<h3 id="总结">总结</h3>
+<p>如何实现的呢？QQ客户端在登录账号时，会启动本地的HTTP服务并监听特定端口中的一个。腾讯网站在加载时会逐个请求这些特定的端口，请求成功后可以拿到QQ客户端已经登录的账号信息，用户点击账号头像从而完成快速登录。</p>
+
+
+					<br />
+				</div>
+				<div id="disqus_thread"></div>
+			</div>
+			<div id="footer">
+	<p style="color:#ccc;font-size:12px;text-align: center">有梦想，有信仰</p>
+	<p style="clear:both"></p>
+</div>
+
+		</div>
+	</body>
+</html>
