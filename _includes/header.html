@@ -1,11 +1,25 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if include.title %}
-	<title>{% if include.title %} {{include.title}}{% endif %} - Even' Den</title>
-  {% else %}
-	<title>Even' Den</title>
-  {% endif %}
+
+	{% if include.title %}
+	<title>{{include.title}} - {{ site.title }}</title>
+	{% else %}
+	<title>{{ site.title }}</title>
+	{% endif %}
+
+	{% if include.description %}
+	<meta name="description" content="{{ include.description }}">
+	{% else %}
+	<meta name="description" content="{{ site.description }}">
+	{% endif %}
+
+	{% if include.keywords %}
+	<meta name="keywords" content="{{ include.keywords }}">
+	{% else %}
+	<meta name="keywords" content="{{ site.keywords }}">
+	{% endif%}
+
 
 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="/css/syntax.css" />

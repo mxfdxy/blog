@@ -2,7 +2,9 @@
 layout: post
 title: NavigationBar与Navigation Item的区别
 category: tech
-tags: 技术
+tags: iOS
+description: 刚接触 iOS 开发的同学估计不清楚 Navigation Bar 和 Navigation Item 区别，我在这里简单介绍一下两者的区别。
+keywords: Navigation Bar, Navigation Item, UINavigationController
 ---
 
 > 刚接触 iOS 开发的同学估计不清楚 Navigation Bar 和 Navigation Item 区别，我在这里简单介绍一下两者的区别。
@@ -22,5 +24,3 @@ tags: 技术
 - Navigation Bar 的作用是放置 Navigation Item；
 - Navigation Item 是 View Controller 的独有属性，容器中多个 ViewController 之间不会共用这一属性；
 - Navigation Item 的作用是放置 leftBarButtonItem、rightBarButtonItem、title 和 prompt 等。
-
-
