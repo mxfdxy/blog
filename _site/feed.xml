@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-07T01:46:33+08:00</updated><id>http://localhost:4000/</id><title type="html">Even’s Den</title><subtitle>嗨，我是梁伟（Even），一个 Web 后端开发者，半个 iOS Developer，正在找一份实习工作。这里有我关于技术、书籍以及生活的分享和对自己的美好期望：有梦想，有信仰！</subtitle><entry><title type="html">个人简历</title><link href="http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html" rel="alternate" type="text/html" title="个人简历" /><published>2017-08-31T00:00:00+08:00</published><updated>2017-08-31T00:00:00+08:00</updated><id>http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86</id><content type="html" xml:base="http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html">&lt;h2 id=&quot;梁伟&quot;&gt;梁伟&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-09T00:05:51+08:00</updated><id>http://localhost:4000/</id><title type="html">Even’s Den</title><subtitle>嗨，我是梁伟（Even），一个 Web 后端开发者，半个 iOS Developer，正在找一份实习工作。这里有我关于技术、书籍以及生活的分享和对自己的美好期望：有梦想，有信仰！</subtitle><entry><title type="html">个人简历</title><link href="http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html" rel="alternate" type="text/html" title="个人简历" /><published>2017-08-31T00:00:00+08:00</published><updated>2017-08-31T00:00:00+08:00</updated><id>http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86</id><content type="html" xml:base="http://localhost:4000/about/2017/08/31/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html">&lt;h2 id=&quot;梁伟&quot;&gt;梁伟&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;信息：男，汉族，1995年12月，现居北京。&lt;/li&gt;
@@ -169,7 +169,119 @@ var var_sso_uin_list=[{&quot;account&quot;:&quot;1139356156&quot;,&quot;face_ind
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/439444-e39b1601d5800a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;2.6.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;总结&quot;&gt;总结&lt;/h3&gt;
-&lt;p&gt;如何实现的呢？QQ客户端在登录账号时，会启动本地的HTTP服务并监听特定端口中的一个。腾讯网站在加载时会逐个请求这些特定的端口，请求成功后可以拿到QQ客户端已经登录的账号信息，用户点击账号头像从而完成快速登录。&lt;/p&gt;</content><author><name></name></author><category term="tech" /><category term="Web" /><summary type="html">在使用QQ账号登录腾讯网站时，QQ推荐使用快速安全登录功能来方便快捷安全的登录腾讯网站。快速安全登录除了手机扫描二维码的方式还有另一种方式，即检测QQ客户端登录账户的方式进行登录。</summary></entry><entry><title type="html">NavigationBar与Navigation Item的区别</title><link href="http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB.html" rel="alternate" type="text/html" title="NavigationBar与Navigation Item的区别" /><published>2015-06-05T00:00:00+08:00</published><updated>2015-06-05T00:00:00+08:00</updated><id>http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB</id><content type="html" xml:base="http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB.html">&lt;blockquote&gt;
+&lt;p&gt;如何实现的呢？QQ客户端在登录账号时，会启动本地的HTTP服务并监听特定端口中的一个。腾讯网站在加载时会逐个请求这些特定的端口，请求成功后可以拿到QQ客户端已经登录的账号信息，用户点击账号头像从而完成快速登录。&lt;/p&gt;</content><author><name></name></author><category term="tech" /><category term="技术" /><summary type="html">在使用QQ账号登录腾讯网站时，QQ推荐使用快速安全登录功能来方便快捷安全的登录腾讯网站。快速安全登录除了手机扫描二维码的方式还有另一种方式，即检测QQ客户端登录账户的方式进行登录。</summary></entry><entry><title type="html">异步编程和多线程之间有什么区别？</title><link href="http://localhost:4000/tech/2015/08/06/%E8%AF%91-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html" rel="alternate" type="text/html" title="异步编程和多线程之间有什么区别？" /><published>2015-08-06T00:00:00+08:00</published><updated>2015-08-06T00:00:00+08:00</updated><id>http://localhost:4000/tech/2015/08/06/%5B%E8%AF%91%5D-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%3F</id><content type="html" xml:base="http://localhost:4000/tech/2015/08/06/%E8%AF%91-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html">&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;异步编程和多线程之间有什么区别？&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;描述&quot;&gt;描述&lt;/h3&gt;
+
+&lt;p&gt;我认为它们基本上是一样的。&lt;/p&gt;
+
+&lt;p&gt;为处理器编写分配任务的程序(在拥有2个以上处理器的机器上)。然后我看了https://msdn.microsoft.com/en-us/library/hh191443.aspx 它说&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;方法的目的是实现非阻塞操作。当等待的任务正在运行时，&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;方法中的&lt;code class=&quot;highlighter-rouge&quot;&gt;await&lt;/code&gt;表达式不会阻塞当前线程。相反，表达式会将方法剩余部分注册为为一个后续事件，并将控制权返回给&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;方法的调用者。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;await&lt;/code&gt;关键字不会导致额外的线程被创建。&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;方法不需要多线程，因为异步方法不会在它自己的线程上运行。该方法在当前同步的上下文上运行，只有在该方法处于活动状态时才使用时间。你可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Task.Run&lt;/code&gt;将 CPU 密集型的工作转移到后台线程，但是后台线程对正在等待可用结果的进程没有帮助。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我想知道是谁能把它翻译成英文。它似乎描述了异步性和线程的区分，意思是你所创建的程序具有异步任务但并没有多线程。&lt;/p&gt;
+
+&lt;p&gt;现在，我理解了异步任务的概念，比如 Jon Skeet 的 《C# In Depth, Third Edition》467页的例子。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;async void DisplayWebsiteLength ( object sender, EventArgs e )
+{
+     label.Text = &quot;Fetching ...&quot;;
+    using ( HttpClient client = new HttpClient() )
+    {
+        Task&amp;lt;string&amp;gt; task = client.GetStringAsync(&quot;http://csharpindepth.com&quot;);
+        string text = await task;
+        label.Text = text.Length.ToString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;关键字的意思是“这个函数，无论何时被调用，它都不会在上下文中被调用，因为它完成所需要求的东西只有在它调用后才会被调用”。&lt;/p&gt;
+
+&lt;p&gt;换句话说，把它写在某个任务的中间&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int x = 5;
+DisplayWebsiteLength();
+double y = Math.Pow((double)x,2000.0);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;，由于&lt;code class=&quot;highlighter-rouge&quot;&gt;DisplayWebsiteLength()&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;没有任何关系，因此会导致&lt;code class=&quot;highlighter-rouge&quot;&gt;Displaywebtelength()&lt;/code&gt;在后台执行。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         processor 1                |      processor 2
+-------------------------------------------------------------------
+int x = 5;                                 |  DisplayWebsiteLength()
+double y = Math.Pow((double)x,2000.0);     |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;很明显，这是一个愚蠢的例子，但我是正确呢？还是完全糊涂了？还是其他呢？&lt;/p&gt;
+
+&lt;p&gt;(同样，我也搞不清楚为什么&lt;code class=&quot;highlighter-rouge&quot;&gt;send&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt;在上面的函数中没有使用过。)&lt;/p&gt;
+
+&lt;h3 id=&quot;回答&quot;&gt;回答&lt;/h3&gt;
+
+&lt;p&gt;你的这种误解很普遍，很多人认为多线程和异步是一回事，事实并非如此。&lt;/p&gt;
+
+&lt;p&gt;举个例子帮助理解，你在餐厅做饭，来了一个订单要一份鸡蛋和烤面包。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;同步：你要先炒鸡蛋，然后再烤面包。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;异步，单线程：你把鸡蛋放在锅里炒，设置一个定时器。又把面包放在面包机里，再设置一个定时器。制作过程中，你把厨房打扫了一遍。定时结束的时候，你把鸡蛋从锅里盛出来，从面包机里取出烤好的面包，最后上桌。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;异步，多线程：你雇用了至少两个厨师，一个炒鸡蛋，一个烤面包。你需要做的是协调这些厨师做饭，避免他们共用厨房资源时产生冲突，当然你还得付钱给他们。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你是不是认为多线程只是异步作业的一种方式？&lt;strong&gt;线程是跟工人有关的，异步是跟任务有关的。&lt;/strong&gt;在多线程工作流程里，你分配任务给工人；在异步单线程工作流成中，你需要一个任务表，上面记录着这些任务所依赖的其他任务结果。当每个任务完成时，它会根据任务的结果来调度下一个可以运行的任务代码。但是你希望只需要一个工人来完成所有的任务，而不是为每一个任务分配一个工人。&lt;/p&gt;
+
+&lt;p&gt;它能帮助你认识到很多任务不是处理器密集型的（processor-bound）。对于处理器密集型的任务，尽可能多的雇佣工人（线程）是有意义的，因为有处理器，为每个工人分配一个任务，并为每个工人分配一个处理器，允许处理器处理其他工作但要尽可能快的计算出结果。而对于不需要处理器的任务，你根本不需要分配一个工人。你只需要等待消息的到达，消息的结果是可用的，并在等待的时候可以做一些其他事情。当消息到达后，你可以将任务完成的后序事情安排为 to-do list 的下一个任务。&lt;/p&gt;
+
+&lt;p&gt;因此，详细的看看 Jon 的例子，发生什么了？&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;谁调用了 DisplayWebSiteLength？我们并不关心。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;它设置了一个标签，创建了一个客户端，并要求客户端获取一些东西。客户端返回一个对象代表获取东西的任务。这项任务正在执行中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;它会不会在其他线程中执行？可能不会，请阅读 Stephen 的文章中关于为什么没有线程的链接。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;现在我们等待任务，发生了什么？我们查看这项任务在创建和等待期间是否完成。如果是的话，那么我们得到结果并继续运行。我们假设它没有完成。&lt;strong&gt;我们将该方法的剩余部分注册成该任务的后续事件，再返回。&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;现在控制已经返回给调用者。它会做什么？做任何它想要的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;现在假设任务完成了。它是怎么做到的呢？也许它运行在另一个线程上，或者是返回的调用者允许它在当前线程上运行来完成任务。无论如何，我们现在已经完成了一项任务。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;完成的任务会要求当前的的线程–可能是唯一的线程–来运行该任务的后续事情。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;控制立即返回到我们在等待时离开的那个方法，现在有了一个可用的结果，因此我们可以分配&lt;code class=&quot;highlighter-rouge&quot;&gt;text&lt;/code&gt;并运行其余的方法。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;就像我类比的这样。有人向你要一份文件，你通过邮件把文件发送了过去，然后继续做其他的工作。当你看到邮件到达邮箱的信号时，你高兴的完成剩下的工作–打开邮封、支付运费等等。你不需要雇佣另一个工人来为你做这些事。&lt;/p&gt;
+
+&lt;h3 id=&quot;原文&quot;&gt;原文&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/34680985/what-is-the-difference-between-asynchronous-programming-and-multithreading?answertab=active#tab-top&quot;&gt;What is the difference between asynchronous programming and multithreading?&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="tech" /><category term="翻译" /><summary type="html">问题</summary></entry><entry><title type="html">NavigationBar与Navigation Item的区别</title><link href="http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB.html" rel="alternate" type="text/html" title="NavigationBar与Navigation Item的区别" /><published>2015-06-05T00:00:00+08:00</published><updated>2015-06-05T00:00:00+08:00</updated><id>http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB</id><content type="html" xml:base="http://localhost:4000/tech/2015/06/05/Navigation-Bar-%E4%B8%8E-Navigation-Item-%E7%9A%84%E5%8C%BA%E5%88%AB.html">&lt;blockquote&gt;
   &lt;p&gt;刚接触 iOS 开发的同学估计不清楚 Navigation Bar 和 Navigation Item 区别，我在这里简单介绍一下两者的区别。&lt;/p&gt;
 &lt;/blockquote&gt;
 
